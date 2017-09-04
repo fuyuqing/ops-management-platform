@@ -1,0 +1,15 @@
+{% include "moban.html" %}
+
+<div class="col-sm-10 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <body>
+        <h2>Excution your command.</h2>
+        <form method="post" action="/command">
+            <p>command: <br><input type="text" name="command"></p>
+            <p>tgt_host: <br><input type="text" name="target_host"></p>
+            <input type="submit" value="ok,exec">
+        </form>
+        {% if result != '' %}
+            <pre>{{ result }}</pre>
+        {% end %}
+    </body>
+</div>

@@ -1,0 +1,48 @@
+<div class="modal fade" id="edit_grp">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+×
+</button>
+<h4 class="modal-title" id="myModalLabel">
+创建用户
+</h4>
+</div>
+<div class="modal-body">
+<form class="form-horizontal" method="post" id="edit_from" action="/edit_grp">
+<script src="/static/js/CreateUser_yz.js"></script>
+  <div class="form-group">
+      <label for="firstname"  class="col-sm-2 control-label">组名</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" id="edit_grp_usr" name="edit_grp_usr" 
+       style="width:251px" placeholder="请输入用户名" disabled >
+      </div> 
+   </div>
+   <div class="form-group">
+      <label for="lastname"  class="col-sm-2 control-label">描述信息</label>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" id="edit_grp_ms" name="edit_grp_ms" 
+            placeholder="请输入组信息描述" style="width:251px">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname"  class="col-sm-2 control-label">包含用户</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" id="edit_include_grp" name="edit_include_grp" 
+       style="width:251px" placeholder="请输入用户名" >
+       <p></p>
+        <label style="color:#F00">多用户请使用,分隔:user1,user2</label>
+      </div> 
+   </div>
+<div class="modal-footer">
+  <input type="hidden"  id="id" name="id" >
+   <button type="submit" id="button"  class="btn btn-primary">保存</button>
+  <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="modal fade" id="del_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4 class="modal-title" id="myModalLabel">删除确认</h4>
+    </div>
+    <div class="modal-body">
+    <form method="post" action="/del_user">
+    <center><p class="error-text">你确定要删除这个用户?</p></center>
+    <input type="hidden"  id="delete" name="delete" >
+    <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" id="button"  name="button">确定</button>
+    <button  class="btn btn-danger" data-dismiss="modal" aria-hidden="true">取消</button>
+    </div>
+	 </form>
+</div>
+</div>
+</div>
+</div>
+

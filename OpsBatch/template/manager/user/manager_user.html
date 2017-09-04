@@ -1,0 +1,67 @@
+<!--加载导航模版-->
+{% include "../../moban.html" %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+ <input name="create" type="button" class="btn btn-primary btn-sm" value="新建用户" data-toggle="modal" data-target="#create_user" >
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>用户名</th>
+                  <th>用户类型</th>
+                  <th>用户状态</th>
+                  <th>描述信息</th>
+                  <th>登录时间</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for data in select %}
+                <tr>
+                  <td>{{ data["id"] }}</td>
+                  <td>{{ data["pin"] }}</td>
+                  {% if data["isAdmin"] ==1 %} 
+                  <td>管理员</td>
+                  {% else %}
+                  <td>普通用户</td>
+                  {% end %}
+                  {% if data["isLock"] ==0 %} 
+                  <td style="color:#0C0">激活</td>
+                  {% else %}
+                  <td style="color:#F00">禁用</td>
+                  {% end %}
+                  <td>{{ data["remaks"] }}</td>
+                  {% if data["login_date"] =='0' %} 
+                  <td style="color:#F00">未登录</td>
+                  {% else %}
+                   <td>{{ data["login_date"] }} </td>
+                  {% end %}
+                  <td><input name="update" type="button" class="btn btn-success btn-sm" value="更新用户" 
+                  data-toggle="modal" data-target="#edit_user"  onclick="update(this)"; > </td>
+                  <td><input type="button"  class="btn btn-danger btn-sm" value="删除用户"
+                  data-toggle="modal" data-target="#del_user" onclick="del(this)";/></td>
+                </tr>
+                  {% end %}
+              </tbody>
+            </table>
+</div>
+<!--创建用户model-->
+{% include "create_user.html" %} 
+<!--更新用户model-->
+{% include "edit_user.html" %} 
+<!--删除用户model-->
+{% include "del_user.html" %} 
+
+<script>
+function del(obj){
+    var tds=$(obj).parent().parent().find('td');
+   $('#delete').val(tds.eq(0).text());
+	};
+
+function update(obj){
+   var tds=$(obj).parent().parent().find('td');
+   $('#id').val(tds.eq(0).text());
+   $('#username').val(tds.eq(1).text());
+   $('#ms').val(tds.eq(4).text());
+   $('#update').modal('show');
+	};
+
+</script>

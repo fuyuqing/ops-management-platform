@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- <html>
+    <head>
+        <title>Login in ops platform</title>
+    </head>
+    <body>
+        <h2>Please Login in Ops platform.</h2>
+        <form method="post" action="/login">
+            <p>UserName:<br><input type="text" name="username"></p>
+            <p>Password:<br><input type="password" name="password"></p>
+            <input type="submit" value="ok,submit">
+        </form>
+    </body>
+</html> -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>登录页面</title>
+    <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./static/css/signin.css" rel="stylesheet">
+    <script src="./static/js/ie-emulation-modes-warning.js"></script>
+  </head>
+  <body>
+	<div class="container">
+	<div class="row">
+        <div class="col-xs" style="background-color:#eee;width:40%;margin:0 auto;">
+	<form action="/login" method="post" class="form-signin" role="form">
+	<h2><center>运维管理平台</center></h2>
+	<input type="username" class="form-control" placeholder="用户名" name="username" required autofocus>
+	<input type="password" class="form-control" placeholder="密码" name="password" required>
+	<button class="btn btn-info" type="submit">登录</button>
+	&nbsp;&nbsp;&nbsp;&nbsp;<a herf="#">忘记密码？</a>
+        </form>
+        </div>
+        </div>
+        </div>
+  </body>
+</html>
+

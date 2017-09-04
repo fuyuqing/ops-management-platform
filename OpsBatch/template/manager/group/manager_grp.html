@@ -1,0 +1,54 @@
+<!--加载导航模版-->
+{% include "../../moban.html" %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+ <input name="create" type="button" class="btn btn-primary btn-sm" value="新建组" data-toggle="modal" data-target="#create_grp" >
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>组id</th>
+                  <th>组名</th>
+                  <th>描述信息</th>
+                  <th>包含用户</th>
+                  <th>权限控制</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for data in select %}
+                <tr>
+                  <td>{{ data["id"] }}</td>
+                  <td>{{ data["groupName"] }}</td>
+                  <td>{{ data["groupRemaks"] }}</td>
+                  <td>{{ data["includeUser"] }}</td>
+		  <td>{{ data["grant"] }}</td>
+                  <td><input name="update" type="button" class="btn btn-success btn-sm" value="更新组" 
+                  data-toggle="modal" data-target="#edit_grp"  onclick="update(this)"; > </td>
+                  <td><input type="button"  class="btn btn-danger btn-sm" value="删除组"
+                  data-toggle="modal" data-target="#del_grp" onclick="del(this)";/></td>
+                </tr>
+                  {% end %}
+              </tbody>
+            </table>
+
+</div>
+<!--创建组model-->
+{% include "create_grp.html" %} 
+<!--编辑组model-->
+{% include "edit_grp.html" %} 
+<!--删除组model-->
+{% include "del_grp.html" %} 
+
+<script>
+function del(obj){
+    var tds=$(obj).parent().parent().find('td');
+   $('#delete').val(tds.eq(0).text());
+  };
+
+function update(obj){
+   var tds=$(obj).parent().parent().find('td');
+   $('#id').val(tds.eq(0).text());
+   $('#edit_grp_usr').val(tds.eq(1).text());
+   $('#edit_grp_ms').val(tds.eq(2).text());
+   $('#update').modal('show');
+  };
+
+</script>
