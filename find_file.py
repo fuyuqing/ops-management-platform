@@ -23,4 +23,4 @@ class FindFile(object):
 
 if __name__ == '__main__':
     find_file = FindFile()
-    print find_file.find_files(u'D:\\360安全浏览器下载\\L007-老男孩教育-Python15期VIP视频-16节-avi',['avi','txt'],['day6计算机作业讲解'])
+    print find_file.find_files(somefile)
